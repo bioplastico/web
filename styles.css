@@ -1,0 +1,5 @@
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.prose h3 { font-family: 'Lora', serif; }
+header a { text-decoration: none; }
+a { transition: all 150ms ease; }
+canvas { max-width: 100%; height: auto; }

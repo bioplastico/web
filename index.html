@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bioplástico — Projeto Bioplástico IFPE</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/lucide/dist/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Projeto Bioplástico — pesquisa e desenvolvimento de bioplásticos sustentáveis no IFPE.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased text-gray-800 bg-gradient-to-b from-white to-emerald-50" style="font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto;">
+  <header class="fixed w-full z-40 bg-white/75 backdrop-blur-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="assets/favicon.png" alt="logo" class="w-10 h-10 rounded-lg">
+        <div>
+          <h1 class="text-lg font-semibold">Projeto Bioplástico</h1>
+          <p class="text-xs text-gray-600">Instituto Federal de Pernambuco</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#sobre" class="hover:text-emerald-700">Sobre</a>
+        <a href="#metodologia" class="hover:text-emerald-700">Metodologia</a>
+        <a href="#resultados" class="hover:text-emerald-700">Resultados</a>
+        <a href="#galeria" class="hover:text-emerald-700">Galeria</a>
+        <a href="#contato" class="hover:text-emerald-700">Contato</a>
+      </nav>
+
+      <div class="md:hidden">
+        <button id="btn-mobile" class="p-2 rounded-md border border-gray-200"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-menu" class="fixed inset-x-4 top-20 bg-white/95 shadow-lg rounded-lg p-4 hidden z-50">
+    <nav class="flex flex-col gap-3">
+      <a href="#sobre" class="py-2">Sobre</a>
+      <a href="#metodologia" class="py-2">Metodologia</a>
+      <a href="#resultados" class="py-2">Resultados</a>
+      <a href="#galeria" class="py-2">Galeria</a>
+      <a href="#contato" class="py-2">Contato</a>
+    </nav>
+  </div>
+
+  <main class="pt-28">
+    <section id="home" class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1600&q=80&auto=format&fit=crop')] bg-cover bg-center opacity-30"></div>
+      <div class="max-w-7xl mx-auto px-6 py-24 relative z-10">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div data-aos="fade-right">
+            <h2 class="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">Bioplástico: inovação para uma economia circular</h2>
+            <p class="mt-6 text-lg text-gray-700">Desenvolvemos materiais biodegradáveis a partir de resíduos orgânicos, propondo soluções para redução de resíduos e substituição de polímeros convencionais em aplicações de curta duração.</p>
+
+            <div class="mt-6 flex gap-4">
+              <a href="#contato" class="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white px-6 py-3 rounded-md shadow-lg">Solicitar informações</a>
+              <a href="#galeria" class="inline-flex items-center gap-3 border border-gray-200 px-6 py-3 rounded-md">Ver galeria</a>
+            </div>
+          </div>
+
+          <div data-aos="zoom-in" class="flex items-center justify-center">
+            <div class="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl transform transition hover:scale-105">
+              <img src="assets/1.jpg" alt="laboratory" class="w-full h-72 object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="max-w-7xl mx-auto px-6 py-16">
+      <div class="prose max-w-none" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold">Sobre o projeto</h3>
+        <p class="mt-3 text-gray-700">O Projeto Bioplástico no IFPE investiga rotas sustentáveis para a produção de materiais poliméricos a partir de matrizes naturais e resíduos agroindustriais. A pesquisa abrange formulação, caracterização físico-química, ensaios mecânicos e avaliações de biodegradação sob condições controladas e em campo.</p>
+        <p class="mt-3 text-gray-700">Além dos aspectos laboratoriais, o projeto realiza análise de custo-benefício e estudos de impacto ambiental, buscando escalabilidade e possíveis parcerias com indústrias locais.</p>
+      </div>
+    </section>
+
+    <section id="metodologia" class="max-w-7xl mx-auto px-6 py-12">
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div data-aos="fade-right">
+          <h4 class="text-xl font-semibold">Metodologia</h4>
+          <p class="mt-3 text-gray-700">A metodologia integra protocolos laboratoriais robustos com controle estatístico dos resultados, garantindo reprodutibilidade. As etapas incluem:</p>
+          <ol class="mt-4 list-decimal list-inside text-gray-700 space-y-2">
+            <li>Coleta e seleção de insumos locais.</li>
+            <li>Pré-tratamento e extração de componentes.</li>
+            <li>Formulação e processamento (filmagem, prensagem).</li>
+            <li>Caracterização: DSC, TGA, FTIR, Ensaios de tração.</li>
+            <li>Ensaios de biodegradação em solo e compostagem acelerada.</li>
+          </ol>
+        </div>
+
+        <div data-aos="fade-left">
+          <h5 class="text-lg font-semibold">Linha do tempo</h5>
+          <div class="mt-4">
+            <ul class="space-y-6">
+              <li class="flex items-start gap-4"><div class="w-3 h-3 rounded-full bg-emerald-600 mt-2"></div><div><div class="font-semibold">Fase 1 — Formulação</div><div class="text-sm text-gray-600">Prototipagem e otimização de composições.</div></div></li>
+              <li class="flex items-start gap-4"><div class="w-3 h-3 rounded-full bg-emerald-600 mt-2"></div><div><div class="font-semibold">Fase 2 — Caracterização</div><div class="text-sm text-gray-600">Ensaios térmicos e mecânicos comparativos.</div></div></li>
+              <li class="flex items-start gap-4"><div class="w-3 h-3 rounded-full bg-emerald-600 mt-2"></div><div><div class="font-semibold">Fase 3 — Validação</div><div class="text-sm text-gray-600">Testes de degradação e análise de ciclo de vida.</div></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultados" class="max-w-7xl mx-auto px-6 py-12 bg-white rounded-xl shadow-sm" data-aos="fade-up">
+      <div style="display: flex; justify-content: space-between; gap: 10%;" class="grid md:grid-cols-2 gap-8 items-center">
+        <div style="display: flex; flex-direction: column; flex: 60%;">
+          <h4 class="text-xl font-semibold">Resultados Esperados (ilustrativo)</h4>
+          <p class="mt-3 text-gray-700">Gráfico de perda de massa durante ensaios de biodegradação (dados de exemplo para visualização).</p>
+          <canvas id="degradationChart" class="mt-6"></canvas>
+        </div>
+
+        <div style="display: flex; flex-direction: column; flex: 40%;">
+          <h5 class="font-semibold">Benefícios e aplicações</h5>
+          <ul class="mt-3 list-disc list-inside text-gray-700 space-y-2">
+            <li>Embalagens descartáveis biodegradáveis.</li>
+            <li>Redução do impacto de resíduos em aterros.</li>
+            <li>Valorização de subprodutos agrícolas.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="max-w-7xl mx-auto px-6 py-16">
+      <h4 class="text-xl font-semibold" data-aos="fade-up">Galeria</h4>
+      <p class="text-gray-600 mt-2" data-aos="fade-up">Fotos temáticas sobre sustentabilidade, laboratórios e materiais bioplásticos.</p>
+
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <a href="https://www.teraambiental.com.br/hs-fs/hubfs/pilares-da-sustentabilidade.jpg?width=1280&height=853&name=pilares-da-sustentabilidade.jpg" class="glightbox" data-gallery="project" data-aos="zoom-in">
+          <img src="https://www.teraambiental.com.br/hs-fs/hubfs/pilares-da-sustentabilidade.jpg?width=1280&height=853&name=pilares-da-sustentabilidade.jpg" class="w-full h-48 object-cover rounded-lg shadow-sm" />
+        </a>
+        <a href="assets/1.jpg" class="glightbox" data-gallery="project" data-aos="zoom-in">
+          <img src="assets/1.jpg" class="w-full h-48 object-cover rounded-lg shadow-sm" />
+        </a>
+        <a href="https://i0.wp.com/www.larplasticos.com.br/wp-content/uploads/2020/02/11-scaled.jpg?fit=2560%2C1709&ssl=1" class="glightbox" data-gallery="project" data-aos="zoom-in">
+          <img src="https://i0.wp.com/www.larplasticos.com.br/wp-content/uploads/2020/02/11-scaled.jpg?fit=2560%2C1709&ssl=1" class="w-full h-48 object-cover rounded-lg shadow-sm" />
+        </a>
+        <a href="assets/4.jpg" class="glightbox" data-gallery="project" data-aos="zoom-in">
+          <img src="assets/4.jpg" class="w-full h-48 object-cover rounded-lg shadow-sm" />
+        </a>
+        <a href="https://www.azulpack.com.br/wp-content/uploads/2023/05/blog-AP-2-2.jpg" class="glightbox" data-gallery="project" data-aos="zoom-in">
+          <img src="https://www.azulpack.com.br/wp-content/uploads/2023/05/blog-AP-2-2.jpg" class="w-full h-48 object-cover rounded-lg shadow-sm" />
+        </a>
+        <a href="assets/5.jpg" class="glightbox" data-gallery="project" data-aos="zoom-in">
+          <img src="assets/5.jpg" class="w-full h-48 object-cover rounded-lg shadow-sm" />
+        </a>
+      </div>
+    </section>
+
+    <section id="equipe" class="max-w-7xl mx-auto px-6 py-12">
+      <h4 class="text-xl font-semibold" data-aos="fade-up">Equipe</h4>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-white p-4 rounded-lg shadow-sm" data-aos="fade-up">
+          <img src="assets/perfil1.jpg" style="width: 86%;" class="h-29 bg-emerald-50 rounded-md mb-4 flex items-center justify-center text-emerald-400">
+          <div class="font-semibold">Marianny Gomes</div>
+          <div class="text-sm text-gray-600">Estudante | IFPE</div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm" data-aos="fade-up">
+          <img src="assets/perfil2.jpg" style="width: 100%;" class="h-100 bg-emerald-50 rounded-md mb-4 flex items-center justify-center text-emerald-400">
+          <div class="font-semibold">Julia Mikaela</div>
+          <div class="text-sm text-gray-600">Estudante | IFPE</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="max-w-7xl mx-auto px-6 py-16 bg-emerald-50/50 rounded-xl shadow-sm" data-aos="fade-up">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h4 class="text-xl font-semibold">Contato</h4>
+          <p class="mt-3 text-gray-700">Para informações, parcerias ou solicitações técnicas, entre em contato via WhatsApp:</p>
+
+          <a id="whatsappBtn" href="https://api.whatsapp.com/send?phone=558193121967&text=Ol%C3%A1%2C%20vim%20pelo%20site%20do%20Projeto%20Biopl%C3%A1stico%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" class="mt-6 inline-flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white px-5 py-3 rounded-md shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.522 3.478A11.943 11.943 0 0012 .5 11.938 11.938 0 003.478 3.478 11.958 11.958 0 00.5 12c0 2.02.53 3.896 1.533 5.564L.5 23.5l6.985-1.778A11.953 11.953 0 0012 23.5c2.02 0 3.896-.53 5.564-1.533A11.943 11.943 0 0023.5 12c0-3.212-1.533-6.196-4.978-8.522zM12 21.5a9.39 9.39 0 01-4.981-1.367l-.356-.213-4.15 1.055 1.06-3.968-.224-.362A9.38 9.38 0 012.5 12 9.5 9.5 0 1112 21.5z"/></svg>
+            Enviar mensagem (WhatsApp)
+          </a>
+
+          <p class="text-sm text-gray-500 mt-3">Número: <strong>+55 81 9312-1967</strong></p>
+        </div>
+
+        <div>
+          <h5 class="font-semibold">Envie uma mensagem rápida</h5>
+          <form id="contactForm" class="mt-4 grid grid-cols-1 gap-3">
+            <input type="text" id="name" placeholder="Seu nome" class="p-3 border rounded-md" required>
+            <input type="email" id="email" placeholder="Seu e-mail" class="p-3 border rounded-md" required>
+            <textarea id="message" placeholder="Mensagem" class="p-3 border rounded-md h-24" required></textarea>
+            <button id="sendBtn" type="button" class="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white px-5 py-3 rounded-md shadow-lg">Enviar via WhatsApp</button>
+            <p id="formHelp" class="text-sm text-gray-500">O formulário abre o WhatsApp com a mensagem preenchida. Nenhum dado é enviado ao servidor.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto px-6 py-8 text-sm text-gray-600">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div>© 2025 — Projeto Bioplástico • Instituto Federal de Pernambuco</div>
+        <div class="flex items-center gap-4">
+          <a href="assets/INSTITUTO_FEDERAL_DE_PERNAMBUCO.pdf" target="_blank" class="hover:text-emerald-700">Download do PDF (Relatório)</a>
+          <a href="#" class="hover:text-emerald-700">Política de privacidade</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script_v5.js"></script>
+</body>
+</html>
