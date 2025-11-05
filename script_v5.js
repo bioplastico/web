@@ -6,28 +6,70 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileMenu = document.getElementById('mobile-menu');
   btnMobile.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-  const ctx = document.getElementById('degradationChart');
-  if (ctx) {
-    new Chart(ctx.getContext('2d'), {
-      type: 'line',
-      data: {
-        labels: ['0 d','7 d','14 d','21 d','28 d','42 d'],
-        datasets: [{ label: 'Perda de massa (%)', data: [0,6,15,27,39,55], fill: true, tension: 0.35, pointRadius: 3, backgroundColor: 'rgba(16,185,129,0.12)', borderColor: 'rgba(16,185,129,0.95)' }]
-      },
-      options: { responsive: true, plugins: { legend: { display: true } }, scales: { y: { beginAtZero: true, max: 100 } } }
+  // Smooth scrolling para links internos
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        // Fechar menu mobile se estiver aberto
+        mobileMenu.classList.add('hidden');
+      }
     });
-  }
-
-  const sendBtn = document.getElementById('sendBtn');
-  sendBtn.addEventListener('click', () => {
-    const name = encodeURIComponent(document.getElementById('name').value || 'Interessado');
-    const email = encodeURIComponent(document.getElementById('email').value || '');
-    const message = encodeURIComponent(document.getElementById('message').value || '');
-    const text = encodeURIComponent(`Olá, vim pelo site do Projeto Bioplástico.\nNome: ${name}\nEmail: ${email}\nMensagem: ${message}`);
-    const phone = '558193121967';
-    const url = `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
-    window.open(url, '_blank');
   });
 
+  // Adicionar animação de contador simples para números
+  const animateNumbers = () => {
+    const numbers = document.querySelectorAll('[data-number]');
+    numbers.forEach(number => {
+      const target = parseInt(number.getAttribute('data-number'));
+      const increment = target / 50;
+      let current = 0;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        number.textContent = Math.floor(current) + '%';
+      }, 30);
+    });
+  };
+
+  // Observador para animações quando elementos entram na viewport
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        // Se for uma seção de números, animar
+        if (entry.target.querySelector('[data-number]')) {
+          animateNumbers();
+        }
+      }
+    });
+  }, { threshold: 0.1 });
+
+  // Observar elementos para animação
+  document.querySelectorAll('.benefit-card, .research-card').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Adicionar efeito de hover nos cards
+  document.querySelectorAll('.bg-gradient-to-br').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-5px)';
+      this.style.transition = 'transform 0.3s ease';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+    });
+  });
+
+  // Criar ícones Lucide
   if (typeof lucide !== 'undefined') lucide.createIcons();
 });
